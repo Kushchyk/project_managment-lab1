@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Допоможи студенту здати сесію</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Допоможи студенту здати сесію</h1>
+    <div id="status">
+        <p>Стрес: <span id="stressLevel"></span></p>
+        <p>Кава: <span id="coffeeLevel"></span></p>
+        <p>Сон: <span id="sleepLevel"></span></p>
+        <p>Знання: <span id="knowledgeLevel"></span></p>
+        <p id="message"></p>
+    </div>
+    <div class="actions">
+        <button onclick="study()">Вчитися</button>
+        <button onclick="drinkCoffee()">Пити каву</button>
+        <button onclick="sleep()">Спати</button>
+        <button onclick="reset()">Почати спочатку</button>
+    </div>
+</div>
+<script src="/js/script.js"></script>
+</body>
+</html>
