@@ -3,7 +3,7 @@ package com.ti.main;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+@SpringBootTest(classes = com.ti.main.sessiongame.MainApplication.class)
 class MainApplicationTests {
 
     @Test
