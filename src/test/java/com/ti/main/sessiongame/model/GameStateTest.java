@@ -32,6 +32,8 @@ public class GameStateTest {
         Assertions.assertEquals(70, gameState.getCoffeeLevel());
         Assertions.assertEquals(35, gameState.getSleepLevel());
         Assertions.assertEquals(40, gameState.getStressLevel());
+        Assertions.assertFalse(gameState.isPanic());
+        Assertions.assertFalse(gameState.isExpelled());
     }
 
     @Test
