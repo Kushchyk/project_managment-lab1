@@ -9,16 +9,19 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ti</groupId>
-    <artifactId>main</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>main</name>
-    <description>main</description>
+    <artifactId>lab3</artifactId>
+    <version>1.0.0</version>
+    <name>lab3</name>
+    <description>Game</description>
     <url/>
     <licenses>
         <license/>
     </licenses>
     <developers>
-        <developer/>
+        <developer>
+            <name>Andrii Kushchyk</name>
+            <email>andrii@example.com</email>
+        </developer>
     </developers>
     <scm>
         <connection/>
@@ -48,13 +51,20 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
             </plugin>
         </plugins>
     </build>
