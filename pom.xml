@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ti</groupId>
-    <artifactId>lab2</artifactId>
+    <artifactId>lab3</artifactId>
     <version>1.0.0</version>
-    <name>lab2</name>
+    <name>lab3</name>
     <description>Game</description>
     <url/>
     <licenses>

@@ -1,62 +1,56 @@
 package com.ti.main.sessiongame.model;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class GameStateTest {
-    private GameState gameState;
-
-    @Before
-    public void setUp() {
-        gameState = new GameState();
-    }
+    final private GameState gameState = new GameState();
 
     @Test
     public void testInitialState() {
-        Assert.assertEquals(40, gameState.getStressLevel());
-        Assert.assertEquals(50, gameState.getCoffeeLevel());
-        Assert.assertEquals(50, gameState.getSleepLevel());
-        Assert.assertEquals(0, gameState.getKnowledgeLevel());
-        Assert.assertFalse(gameState.isPanic());
-        Assert.assertFalse(gameState.isExpelled());
+        Assertions.assertEquals(50, gameState.getStressLevel());
+        Assertions.assertEquals(50, gameState.getCoffeeLevel());
+        Assertions.assertEquals(50, gameState.getSleepLevel());
+        Assertions.assertEquals(0, gameState.getKnowledgeLevel());
+        Assertions.assertFalse(gameState.isPanic());
+        Assertions.assertFalse(gameState.isExpelled());
     }
 
     @Test
-    public void testStudyIncreasesStressAndKnowledge() {
+    public void testStudy() {
         gameState.study();
-        Assert.assertEquals(70, gameState.getStressLevel());
-        Assert.assertEquals(40, gameState.getSleepLevel());
-        Assert.assertEquals(10, gameState.getKnowledgeLevel());
+        Assertions.assertEquals(70, gameState.getStressLevel());
+        Assertions.assertEquals(40, gameState.getSleepLevel());
+        Assertions.assertEquals(10, gameState.getKnowledgeLevel());
     }
 
     @Test
-    public void testDrinkCoffeeReducesStressAndIncreasesCoffeeLevel() {
+    public void testDrinkCoffee() {
         gameState.drinkCoffee();
-        Assert.assertEquals(70, gameState.getCoffeeLevel());
-        Assert.assertEquals(35, gameState.getSleepLevel());
-        Assert.assertEquals(40, gameState.getStressLevel());
+        Assertions.assertEquals(70, gameState.getCoffeeLevel());
+        Assertions.assertEquals(35, gameState.getSleepLevel());
+        Assertions.assertEquals(40, gameState.getStressLevel());
     }
 
     @Test
-    public void testSleepReducesStressAndIncreasesSleepLevel() {
+    public void testSleep() {
         gameState.sleep();
-        Assert.assertEquals(30, gameState.getStressLevel());
-        Assert.assertEquals(80, gameState.getSleepLevel());
-        Assert.assertEquals(-5, gameState.getKnowledgeLevel());
+        Assertions.assertEquals(30, gameState.getStressLevel());
+        Assertions.assertEquals(80, gameState.getSleepLevel());
+        Assertions.assertEquals(-5, gameState.getKnowledgeLevel());
     }
 
     @Test
-    public void testPanicWhenStressIs100() {
+    public void testPanic() {
         gameState.setStressLevel(90);
         gameState.study();
-        Assert.assertTrue(gameState.isPanic());
+        Assertions.assertTrue(gameState.isPanic());
     }
 
     @Test
-    public void testExpelledWhenCoffeeOrSleepReachesZero() {
+    public void testExpelled() {
         gameState.setSleepLevel(5);
         gameState.study();
-        Assert.assertTrue(gameState.isExpelled());
+        Assertions.assertTrue(gameState.isExpelled());
     }
 }
